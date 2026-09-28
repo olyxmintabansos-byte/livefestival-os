@@ -1,26 +1,72 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --acid-lime: #d4ff00;
+    --electric-orange: #ff4d00;
+    --neon-pink: #ff007f;
+    --ultra-violet: #7000ff;
+    --deep-bg: #0b0a10;
+    --maximal-black: #06050a;
+  }
+
+  body {
+    background-color: var(--deep-bg);
+    color: #ffffff;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* #4 Maximalism High-Energy Kinetic Grid */
+.kinetic-marquee {
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.kinetic-track {
+  display: flex;
+  animation: marquee 14s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Maximalist Hazard Zebra Stripe */
+.hazard-stripe {
+  background: repeating-linear-gradient(
+    45deg,
+    #ff4d00,
+    #ff4d00 12px,
+    #0b0a10 12px,
+    #0b0a10 24px
+  );
+}
+
+.hazard-stripe-lime {
+  background: repeating-linear-gradient(
+    45deg,
+    #d4ff00,
+    #d4ff00 10px,
+    #000000 10px,
+    #000000 20px
+  );
+}
+
+/* Hyper-Saturated Tactical Sticker */
+.maximal-badge {
+  box-shadow: 4px 4px 0px #000000;
+  transform: rotate(-1.5deg);
+  transition: transform 0.15s ease-in-out;
+}
+.maximal-badge:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+
+.maximal-card {
+  background-color: #121018;
+  border: 2px solid #ffffff;
+  box-shadow: 6px 6px 0px #d4ff00;
 }
